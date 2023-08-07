@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="color-switcher">
+        <div class="switcher-btn">
+            <i class="fas fa-cog"></i>
+        </div>
+        <h3>select color</h3>
+        <div class="theme-buttons-container">
+            <span class="theme-buttons" data-color="#8e44ad" style="background: #8e44ad;"></span>
+            <span class="theme-buttons" data-color="#ad8c44" style="background: #ad8c44;"></span>
+            <span class="theme-buttons" data-color="#6c44ad" style="background: #6c44ad;"></span>
+            <span class="theme-buttons" data-color="#446ead" style="background: #446ead;"></span>
+            <span class="theme-buttons" data-color="#212120" style="background: #212120;"></span>
+            <span class="theme-buttons" data-color="#ea2027" style="background: #ea2027;"></span>
+            <span class="theme-buttons" data-color="#e84393" style="background: #e84393;"></span>
+            <span class="theme-buttons" data-color="#131214" style="background: #131214;"></span>
+            <span class="theme-buttons" data-color="#4485ad" style="background: #4485ad;"></span>
+            
+        </div>
+    </div>
+    <div class="container">
+        <h1>color switcher</h1>
+    </div>
+    
+
+<script>
+    document.querySelector('.switcher-btn').onclick = () =>{
+document.querySelector('.color-switcher').classList.toggle('active');
+};
+let themeButtons = document.querySelectorAll('.theme-buttons');
+
+themeButtons.forEach(color =>{
+    color.addEventListener('click',() =>{
+        let dataColor = color.getAttribute('data-color');
+        document.querySelector(':root').style.setProperty('--main-color', dataColor);
+    });
+});
+</script>
+
+
+
+</body>
+</html>
